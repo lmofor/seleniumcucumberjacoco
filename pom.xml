@@ -84,6 +84,25 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>net.masterthought</groupId>
+                <artifactId>cucumber-reporting</artifactId>
+                <executions>
+                    <execution>
+                        <id>execution</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <projectName>cucumberbasics</projectName>
+                            <outputDirectory>${project.build.directory}/cucumber-report-html</outputDirectory>
+                            <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
+                        </configuration>
+                    </execution>
+                </executions>
+                <version>4.4.0</version>
+            </plugin>
         </plugins>
     </build>
     <dependencies>
@@ -119,25 +138,7 @@
             <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/net.masterthought/cucumber-reporting -->
-        <dependency>
-            <groupId>net.masterthought</groupId>
-            <artifactId>cucumber-reporting</artifactId>
-            <executions>
-                <execution>
-                    <id>execution</id>
-                    <phase>verify</phase>
-                    <goals>
-                        <goal>generate</goal>
-                    </goals>
-                    <configuration>
-                        <projectName>cucumberbasics</projectName>
-                        <outputDirectory>${project.build.directory}/cucumber-report-html</outputDirectory>
-                        <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
-                    </configuration>
-                </execution>
-            </executions>
-            <version>4.4.0</version>
-        </dependency>
+
     </dependencies>
 
 
