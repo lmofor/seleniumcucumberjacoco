@@ -84,7 +84,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
+            <!--<plugin>
                 <groupId>net.masterthought</groupId>
                 <artifactId>maven-cucumber-reporting</artifactId>
                 <executions>
@@ -98,14 +98,11 @@
                             <projectName>cucumberbasics</projectName>
                             <outputDirectory>${project.build.directory}/cucumber-report-html</outputDirectory>
                             <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
-                            <!--<jsonFiles>
-                                <param>cucumber.json</param>
-                            </jsonFiles>-->
                         </configuration>
                     </execution>
                 </executions>
                 <version>4.5.0</version>
-            </plugin>
+            </plugin>-->
         </plugins>
     </build>
     <dependencies>
