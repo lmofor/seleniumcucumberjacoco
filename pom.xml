@@ -21,6 +21,16 @@
                 <configuration>
                     <argLine>-Xmx2048m</argLine>
                 </configuration>
+                <executions>
+                    <execution>
+                        <id>default-test</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                    </execution>
+                </executions>
+
                 <version>2.22.1</version>
                 <!-- <configuration>
                     <argLine>${surefireJacocoAgent}</argLine>
