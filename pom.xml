@@ -19,7 +19,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
-                    <argLine>-Xmx2048m</argLine>
+                    <argLine>${surefireJacocoAgent} -Xmx2048m</argLine>
                 </configuration>
                 <executions>
                     <execution>
@@ -47,7 +47,7 @@
                             <goal>prepare-agent</goal>
                         </goals>
                         <configuration>
-                            <destFile>target/coverage-reports/jacoco.exec</destFile>
+                            <destFile>${project.build.directory}/coverage-reports/jacoco.exec</destFile>
                             <propertyName>surefireJacocoAgent</propertyName>
                         </configuration>
                     </execution>
@@ -68,7 +68,7 @@
                             <goal>report</goal>
                         </goals>
                         <configuration>
-                            <dataFile>target/coverage-reports/jacoco.exec</dataFile>
+                            <dataFile>${project.build.directory}/coverage-reports/jacoco.exec</dataFile>
                             <outputDirectory>${project.reporting.outputDirectory}/jacoco</outputDirectory>
                         </configuration>
                     </execution>
