@@ -47,7 +47,7 @@
                             <goal>prepare-agent</goal>
                         </goals>
                         <configuration>
-                            <destFile>${project.build.directory}/coverage-reports/jacoco.exec</destFile>
+                            <destFile>target/coverage-reports/jacoco.exec</destFile>
                             <propertyName>surefireJacocoAgent</propertyName>
                         </configuration>
                     </execution>
@@ -68,7 +68,7 @@
                             <goal>report</goal>
                         </goals>
                         <configuration>
-                            <dataFile>${project.build.directory}/coverage-reports/jacoco.exec</dataFile>
+                            <dataFile>target/coverage-reports/jacoco.exec</dataFile>
                             <outputDirectory>${project.reporting.outputDirectory}/jacoco</outputDirectory>
                         </configuration>
                     </execution>
