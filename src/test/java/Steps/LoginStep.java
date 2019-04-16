@@ -9,9 +9,16 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.concurrent.TimeUnit;
 
 public class LoginStep extends BaseUtil {
 
@@ -23,8 +30,8 @@ public class LoginStep extends BaseUtil {
 
     @Given("^I navigate to the login page$")
     public void iNavigateToTheLoginPage() throws Throwable {
-        System.out.println("I  navigate to the login page");
-        base.Driver.navigate().to("http://www.executeautomation.com/demosite/Login.html");
+        System.out.println("Navigation vers la page de login");
+        base.Driver.navigate().to("http://172.17.0.2:8080/webui/");
     }
 
 //    @And("^I enter the username as admin and password as admin$")
@@ -40,12 +47,6 @@ public class LoginStep extends BaseUtil {
         page.ClickLogin();
     }
 
-    @Then("^I should see the userform page$")
-    public void iShouldSeeTheUserformPage() throws Throwable {
-        //System.out.println("I should see the userform page");
-        Assert.assertEquals(
-                base.Driver.findElement(By.id("Initial")).isDisplayed(),true);
-    }
 
 //    @And("^I enter the username as \"([^\"]*)\" and password as \"([^\"]*)\"$")
 //    public void iEnterTheUsernameAsAndPasswordAs(String username, String password) throws Throwable {
@@ -68,6 +69,20 @@ public class LoginStep extends BaseUtil {
             page.Login(user.username,user.password);
         }
     }
+
+
+    @Then("^I should see the userform pages$")
+    public void iShouldSeeTheUserformPage() throws Throwable {
+        //System.out.println("I should see the userform page");
+        WebDriverWait wait = new WebDriverWait(base.Driver, 10);
+        wait.until(ExpectedConditions.textToBePresentInElementValue(By.xpath("//input[1]"),"Sitracel"));
+
+        System.out.println("Valeur Attribut : "+base.Driver.findElement(By.xpath("//input[1]")).getAttribute("value"));
+        Assert.assertEquals(
+                base.Driver.findElement(By.xpath("//input[1]")).getAttribute("value"),"Sitracel");
+    }
+
+
 
     public class User
     {

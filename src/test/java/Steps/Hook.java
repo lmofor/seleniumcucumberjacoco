@@ -16,14 +16,14 @@ public class Hook extends BaseUtil {
 
     @Before
     public void InitializeTest(){
-        System.out.println("Opening the browser : Chrome");
+        System.out.println("Ouverture le navigateur : Chrome");
         System.setProperty("webdriver.chrome.driver","C:\\\\Libs\\\\chromedriver.exe");
         base.Driver = new ChromeDriver();
     }
 
     @After
     public void TearDownTest(){
-        System.out.println("Closing the browser : Chrome");
+        System.out.println("Fermeture du navigateur : Chrome");
     }
 
 

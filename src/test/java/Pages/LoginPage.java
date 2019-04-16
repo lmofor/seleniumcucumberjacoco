@@ -8,13 +8,13 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
 
-    @FindBy(how = How.NAME, using = "UserName")
+    @FindBy(how = How.XPATH, using = "//tr[2]/td[2]/input")
     public WebElement txtUserName;
 
-    @FindBy(how = How.NAME, using = "Password")
+    @FindBy(how = How.XPATH, using = "//tr[3]/td[2]/input")
     public WebElement txtPassword;
 
-    @FindBy(how = How.NAME, using = "Login")
+    @FindBy(how = How.XPATH, using = "//button[1]")
     public WebElement txtLogin;
 
     public LoginPage(WebDriver driver) {
@@ -27,7 +27,7 @@ public class LoginPage {
     }
 
     public void ClickLogin(){
-        txtLogin.submit();
+        txtLogin.click();//submit();
     }
 
 }

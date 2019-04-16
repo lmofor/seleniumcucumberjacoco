@@ -5,6 +5,6 @@ Feature: LoginFeature
     Given I navigate to the login page
     And I enter the following for login
       |username |password     |
-      |admin    |adminpassword|
+      |SuperUser    |sitracels1|
     And  I click Login button
-    Then I should see the userform page
+    Then I should see the userform pages
